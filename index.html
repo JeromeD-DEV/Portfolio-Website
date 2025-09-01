@@ -3,44 +3,158 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Welcome</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid px-5">
-            <a class="navbar-brand" href="/">My Portfolio</a>
+            <a class="navbar-brand" href="/">Saiyantist</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a href="#home">Home</a></li>
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item"><a href="#landing-section">Home</a></li>
                     <li class="nav-item"><a href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a href="#projects">Projects</a></li>
                     <li class="nav-item"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </div>
+        </dibv>
     </nav>
 
-    <!-- <main class="container-fluid">
-        <div id="home">
-            <h1>Hello! I'm Jerome A.K.A. Angelo</h1>
+    <section id="landing-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Photo -->
+                <div class="col-lg-6">
+                    <div class="landing-photo">
+                        <img src="" alt="Graduation Photo">                        
+                    </div>
+                </div>
+                <!-- Content -->
+                <div class="col-lg-6">
+                    <div class="landing-content">
+                        <div class="badge" id="landing-badge">Software Developer</div>
+                        <h1 class="title">Jerome <i>"Angelo"</i> Abad</h1>
+                        <p class="subtitle">Information Systems Graduate</p>
+                        <p class="body-text">A Software Engineer diligent in building effective and UI-friendly web applications.</p>
+                        <a href="#about-me" class="btn-primary">More about me</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="gallery">
-            <h1>Gallery</h1>
+    </section>
+
+    <hr>
+
+    <!-- Home Section - About me and Gallery combined -->
+     <!-- Dev note:
+            Short Name History
+                - 1 long row
+            Academic Background
+                - Divide into two: for Academic (Fresh Graduate) and for Personal (Games and Films...)
+     -->
+    <section id="about-me">
+        <div class="container">
+            <h1 class="section-title text-center mb-5">About Me</h1>
+            
+            <div class="row g-5">
+                <!-- Card 1 -->
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <div class="badge" id="about-badge">Short Name History</div>
+                        <h2 class="card-title">Angelo Delos Santos</h2>
+                        <p class="subtitle">I am Jerome Delos Santos Abad, A.K.A. Angelo Delos Santos. Why?</p>
+                        <p class="body-text">
+                            To explain shortly, I have used my mother's maiden name as my middle name throughout my academic career since 2007.
+                            This is due to a conflict within my family.
+                        </p>
+                        <p class="body-text">
+                            At present, I learned that the name "Angelo Delos Santos" wasn't registered back in 2006-2007 and so I decided to adhere to my
+                            legal name to start my professional career.
+                        </p>
+                        <p class="body-text">
+                            Fret not, I am not a spy like Al*ce G*o. 😆
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <div class="badge" id="about-badge">Academic Background</div>
+                        <h2 class="card-title">My Background</h2>
+                        <p>
+                            I am a fresh graduate of La Verdad Christian College, Inc., Apalit - Pampanga,
+                            and have attained a Bachelor's degree in Information Systems with Latin Honors.
+                        </p>
+                        <p>
+                            Undergoing the esteemed program at my alma matter, I was just a lax and care-free student, somehow grade-conscious, but the institution
+                            brought out my potential and have transformed me into a highly potent individual and a highly influential asset with excellence in his work.
+                        </p>
+                        <p>
+                            I have gained not just skills and knowledge, but also invaluable connections in the IT Industry as former
+                            Vice President for External Affairs in our beloved Association of ICT Majors.
+                        </p>
+                        <p>
+                            Games and Films are a major part of my stress management. I am into game genres such as Story, Adventure, FPS, MOBA, Action/Fighting, RTS, and others,
+                            and into film genres such as Sit-com, Anime, Sci-Fi, Fantasy, Action/Thriller, Horror, Rom-com, War, and more. I am an observant and curious in my childhood to teenage years, and these have significantly helped me
+                            build my personality, my intelligence, and my learnability. 
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="projects">
-            <h1>My Projects</h1>
-        </div>
-        
-        <div id="contact">
-            <h1>Reach out!</h1>
-        </div>
-    </main> -->
+    </section>
+
+    <hr>
+
+    <!-- Gallery -->
+     <!-- Dev note:
+            Layout could be in rows that has 2 columns, left is carousel right is short description (or reverse)
+                OR
+            Cards as described in the My Projects Section
+     -->
+    <section id="gallery">
+        <h1>Gallery</h1>
+            <p class="subtitle">
+                2-column rows or Cards
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iure itaque minus.
+            </p>
+            <br><br><br><br><br><br><br><hr>
+    </section>
+
+    <!-- My Projects Section -->
+    <section id="projects">
+        <h1>My Projects</h1>
+            <p>Clickable cards that links to the respective GitHub repository, card structure should display a carousel for its upper part then project details for the bottom part.</p>
+            <br><br><br><br><br><br><br><hr>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Reach out!</h1>
+            <p class="subtitle">
+                MS Teams, Outlook, Github, Fake number
+            </p>
+            <p>Search for inspo for this section.</p>
+            <br><br><br><br><br><br><br><hr>
+    </section>
+
+    <h1 class="text-center">Back to top</h1>
+    <p>Add a small back to top after making the website fully responsive.</p>
 </body>
-<footer>
-    <p>Copyright 2025</p>
+<footer class="text-center bg-light">
+    <p>
+        <strong>
+            Disclaimer:
+        </strong>
+        This is a personal portfolio website. All rights reserved 2025.
+    </p>
 </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>

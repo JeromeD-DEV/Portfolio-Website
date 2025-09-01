@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerome Angelo - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #0ea5e9;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Updated navbar to match reference design with rounded container */
+        .navbar {
+            background: transparent;
+            padding: 2rem 0 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .contact-btn {
+            background: var(--text-dark);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Updated hero section with gradient background and image carousel */
+        .hero-section {
+            background: transparent;
+            padding: 8rem 0 4rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-badge {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Added carousel styling */
+        .hero-carousel {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .carousel-placeholder {
+            height: 500px;
+            background: linear-gradient(45deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 4rem;
+        }
+
+        .btn-primary-custom {
+            background: var(--text-dark);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-badge {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 0.25rem;
+            display: inline-block;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Updated project cards with image placeholders */
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/placeholder.svg?height=200&width=400') center/cover;
+            opacity: 0.3;
+        }
+
+        .contact-section {
+            background: transparent;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--text-dark);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .footer {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Added gallery carousel styling */
+        .gallery-carousel {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-carousel .carousel-item {
+            height: 300px;
+        }
+
+        .gallery-placeholder {
+            height: 300px;
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                margin: 0 1rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .about-card,
+            .contact-card {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+
+            .nav-link {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated navigation with rounded container design -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container d-flex align-items-center justify-content-between">
+                <a class="navbar-brand" href="#home">
+                    <div class="logo-circle">JA</div>
+                </a>
+                
+                <div class="d-none d-md-flex align-items-center">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </div>
+                
+                <a href="#contact" class="contact-btn">Contact</a>
+                
+                <!-- Mobile menu button -->
+                <button class="btn d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile navigation -->
+            <div class="collapse mt-3" id="mobileNav">
+                <div class="navbar-container">
+                    <div class="d-flex flex-column">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Updated hero section with carousel -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge">IT Professional</div>
+                        <h1 class="hero-title">Jerome Angelo</h1>
+                        <p class="hero-subtitle">Information Systems Graduate & Digital Creative passionate about innovative solutions</p>
+                        <a href="#about" class="btn-primary-custom">View My Work</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="carousel-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-placeholder">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-placeholder">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about-card">
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <h3 class="h4 mb-3" style="color: var(--primary-color);">Background</h3>
+                                <p class="mb-3">I am a fresh graduate of La Verdad Christian College, Inc., Apalit - Pampanga, with a Bachelor's degree in Information Systems with Latin Honors.</p>
+                                <p>Through my academic journey, I've transformed from a laid-back student into a highly motivated professional with excellence in my work.</p>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <h3 class="h4 mb-3" style="color: var(--primary-color);">Experience</h3>
+                                <p class="mb-3">I've gained valuable experience and connections in the IT industry as former Vice President for External Affairs in our Association of ICT Majors.</p>
+                                <p>My passion for technology extends beyond academics into gaming and film, which helps me stay creative and innovative.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="h5 mb-3" style="color: var(--primary-color);">Skills & Interests</h3>
+                            <div class="d-flex flex-wrap">
+                                <span class="skill-badge">Information Systems</span>
+                                <span class="skill-badge">IT Leadership</span>
+                                <span class="skill-badge">Project Management</span>
+                                <span class="skill-badge">Gaming</span>
+                                <span class="skill-badge">Film Analysis</span>
+                                <span class="skill-badge">Strategic Planning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="h5 mb-3" style="color: var(--primary-color);">Academic Projects</h3>
+                            <p class="text-muted mb-3">Various information systems projects completed during my academic career, showcasing technical skills and innovation.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="h5 mb-3" style="color: var(--primary-color);">Leadership Initiatives</h3>
+                            <p class="text-muted mb-3">External affairs projects and community building activities from my role as VP in the ICT Association.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="h5 mb-3" style="color: var(--primary-color);">Personal Interests</h3>
+                            <p class="text-muted mb-3">Gaming and film analysis projects that demonstrate creativity and analytical thinking skills.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added new gallery section with carousel -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div id="galleryCarousel" class="carousel slide gallery-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="gallery-placeholder" style="height: 140px; border-radius: 12px;">
+                                <i class="fas fa-photo-video"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="gallery-placeholder" style="height: 140px; border-radius: 12px;">
+                                <i class="fas fa-images"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <h3 class="h4 mb-4" style="color: var(--primary-color);">Ready to collaborate?</h3>
+                        <p class="mb-4 text-muted">I'm always open to discussing new opportunities, innovative projects, or just having a conversation about technology and creativity.</p>
+                        
+                        <div class="mb-4">
+                            <a href="mailto:jerome@example.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/jerome-angelo" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/jerome-angelo" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/jerome_angelo" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="mailto:jerome@example.com" class="btn btn-primary-custom">
+                            <i class="fas fa-paper-plane me-2"></i>Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2025 Jerome Angelo. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-container');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Add active class to navigation links
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => {
+                new bootstrap.Carousel(carousel, {
+                    interval: 4000,
+                    wrap: true
+                });
+            });
+        });
+    </script>
+</body>
+</html>
