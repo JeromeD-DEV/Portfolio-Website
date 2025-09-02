@@ -102,7 +102,7 @@ hr {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 30px;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -131,7 +131,7 @@ hr {
 .btn-primary {
     background: var(--bs-primary);
     border: none;
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 1rem;
     font-weight: 600;
     border-radius: 25px;
     transition: all 0.3s ease;
@@ -143,9 +143,11 @@ hr {
 .btn-primary:hover {
     background: var(--bs-secondary);
     transform: scale(102%);
+    text-decoration: underline;
 }
 
 .title {
+    font-size: 2rem;
     font-weight: 700;
     margin: 1.5rem 0;
 }
@@ -165,7 +167,7 @@ hr {
 
 .body-text {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--bs-text);
 }
 
@@ -174,7 +176,7 @@ hr {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 30px;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     height: 100%;
